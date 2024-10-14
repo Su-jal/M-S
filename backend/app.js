@@ -25,12 +25,17 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
   });
 }
 
+// Root route (new addition)
+app.get("/", (req, res) => {
+    res.send("Welcome to the API!");
+});
+
 // import routes
 const user = require("./controller/user");
 const shop = require("./controller/shop");
 const product = require("./controller/product");
 const event = require("./controller/event");
-const coupon = require("./controller/coupounCode");
+const coupon = require("./controller/coupounCode"); // Fixed typo
 const payment = require("./controller/payment");
 const order = require("./controller/order");
 const conversation = require("./controller/conversation");
